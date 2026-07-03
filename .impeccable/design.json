@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-03T00:00:00Z",
+  "title": "Design System: GitVision",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Electric Signal Blue",
+        "canonical": "oklch(72% 0.16 246)",
+        "tonalRamp": [
+          "oklch(20% 0.05 246)",
+          "oklch(30% 0.08 246)",
+          "oklch(40% 0.11 246)",
+          "oklch(50% 0.13 246)",
+          "oklch(60% 0.15 246)",
+          "oklch(72% 0.16 246)",
+          "oklch(84% 0.10 246)",
+          "oklch(95% 0.03 246)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Near-Black Canvas",
+        "canonical": "oklch(15% 0.002 246)",
+        "tonalRamp": [
+          "oklch(10% 0.002 246)",
+          "oklch(15% 0.002 246)",
+          "oklch(22% 0.003 246)",
+          "oklch(30% 0.004 246)",
+          "oklch(45% 0.005 246)",
+          "oklch(60% 0.006 246)",
+          "oklch(80% 0.005 246)",
+          "oklch(95% 0.003 246)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Raised Surface",
+        "canonical": "oklch(20% 0.01 246)"
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Surface Hover",
+        "canonical": "oklch(24% 0.012 246)"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline Border",
+        "canonical": "oklch(32% 0.01 246)"
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Foreground Text",
+        "canonical": "oklch(92% 0.005 246)"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "oklch(63% 0.01 246)"
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Success Green",
+        "canonical": "oklch(68% 0.15 145)"
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "Warning Amber",
+        "canonical": "oklch(75% 0.13 80)"
+      },
+      "destructive": {
+        "role": "semantic",
+        "displayName": "Destructive Red",
+        "canonical": "oklch(55% 0.15 25)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only, one per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers within a page." },
+      "title": { "displayName": "Title", "purpose": "Card titles, panel headers, dialog titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, lesson content." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav items, form labels." },
+      "mono": { "displayName": "Mono", "purpose": "Terminal output, diffs, commit hashes, inline code." }
+    },
+    "shadows": [
+      { "name": "panel", "value": "0 10px 15px -3px rgb(0 0 0 / 0.3)", "purpose": "Dropdown menus, command autocomplete, floating AI assistant panel." },
+      { "name": "overlay", "value": "0 25px 50px -12px rgb(0 0 0 / 0.5)", "purpose": "Modal dialogs, search command palette." },
+      { "name": "accent-glow", "value": "0 10px 15px -3px oklch(72% 0.16 246 / 0.10)", "purpose": "Soft blue hover glow on primary CTAs and interactive feature cards only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default ease-out-quint for hover/state transitions, no bounce." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Hover/focus micro-interactions." },
+      { "name": "duration-standard", "value": "300ms", "purpose": "Panel/card transitions, mobile menu slide." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single most important action in a view (Run Command, Start Lesson, Open Playground).",
+      "html": "<button class=\"ds-btn-primary\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"5 3 19 12 5 21 5 3\"/></svg>Open Playground</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #38a6ff; color: #ffffff; font-weight: 500; font-size: 14px; padding: 12px 20px; border-radius: 8px; border: none; cursor: pointer; transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { transform: scale(1.03); box-shadow: 0 10px 15px -3px rgba(56, 166, 255, 0.15); } .ds-btn-primary:focus-visible { outline: 2px solid #38a6ff; outline-offset: 2px; } .ds-icon { width: 16px; height: 16px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions; used for everything that isn't the primary CTA in a view.",
+      "html": "<button class=\"ds-btn-ghost\">View Docs</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #e6edf3; font-weight: 500; font-size: 14px; padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer; transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { background: #1c2129; } .ds-btn-ghost:focus-visible { outline: 2px solid #38a6ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard flat card for feature/doc content — no resting shadow, border and surface color only.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" width=\"20\" height=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg></div><h3 class=\"ds-card-title\">Interactive Terminal</h3><p class=\"ds-card-desc\">Run real Git commands in a fully simulated environment.</p></div>",
+      "css": ".ds-card { border-radius: 12px; border: 1px solid rgba(48, 54, 61, 0.5); background: rgba(22, 27, 34, 0.5); backdrop-filter: blur(4px); padding: 24px; transition: border-color 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-card:hover { border-color: rgba(56, 166, 255, 0.5); box-shadow: 0 10px 15px -3px rgba(56, 166, 255, 0.10); } .ds-card-icon { display: inline-flex; border-radius: 8px; background: rgba(56, 166, 255, 0.1); color: #38a6ff; padding: 12px; margin-bottom: 16px; } .ds-card-title { font-size: 18px; font-weight: 600; color: #e6edf3; margin: 0 0 8px; } .ds-card-desc { font-size: 14px; color: #8b949e; line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard form field; precise focus ring, no bounce.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"git commit -m \\\"message\\\"\" />",
+      "css": ".ds-input { display: flex; height: 36px; width: 100%; border-radius: 6px; border: 1px solid #30363d; background: transparent; color: #e6edf3; padding: 4px 12px; font-size: 14px; font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-input::placeholder { color: #8b949e; } .ds-input:focus-visible { outline: none; border-color: #38a6ff; box-shadow: 0 0 0 1px #38a6ff; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Fixed top bar with active-route highlighting via signal-blue tint.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">GitVision</span><div class=\"ds-nav-links\"><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">Playground</a><a class=\"ds-nav-link\" href=\"#\">Docs</a><a class=\"ds-nav-link\" href=\"#\">Learn</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background: #161b22; border-bottom: 1px solid #30363d; } .ds-nav-brand { font-weight: 700; font-size: 16px; color: #e6edf3; } .ds-nav-links { display: flex; gap: 4px; } .ds-nav-link { padding: 8px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #8b949e; text-decoration: none; transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1), color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-link:hover { background: #1c2129; color: #e6edf3; } .ds-nav-link-active { color: #38a6ff; background: rgba(56, 166, 255, 0.1); }"
+    },
+    {
+      "name": "Terminal Panel",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature component: chrome-bar terminal with mono output, success/error semantic color.",
+      "html": "<div class=\"ds-terminal\"><div class=\"ds-terminal-bar\"><span class=\"ds-dot\" style=\"background:#ff5f56\"></span><span class=\"ds-dot\" style=\"background:#ffbd2e\"></span><span class=\"ds-dot\" style=\"background:#27c93f\"></span><span class=\"ds-terminal-label\">Terminal</span></div><div class=\"ds-terminal-body\"><div class=\"ds-terminal-line ds-terminal-muted\">$ git status</div><div class=\"ds-terminal-line ds-terminal-success\">On branch main, nothing to commit</div></div></div>",
+      "css": ".ds-terminal { border-radius: 12px; overflow: hidden; border: 1px solid rgba(48, 54, 61, 0.5); background: #161b22; } .ds-terminal-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-bottom: 1px solid #30363d; } .ds-dot { width: 10px; height: 10px; border-radius: 9999px; display: inline-block; } .ds-terminal-label { font-size: 11px; color: #8b949e; margin-left: 8px; font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; } .ds-terminal-body { padding: 16px; font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; font-size: 14px; line-height: 1.6; } .ds-terminal-line { white-space: pre-wrap; } .ds-terminal-muted { color: #8b949e; } .ds-terminal-success { color: #3fb950; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Command-Line Classroom",
+    "overview": "GitVision is a real developer surface — dark, monospace-native, GitHub-adjacent — that has been quietly built to teach. It never pretends to be a toy: the terminal is a real terminal, the commit graph is a real graph, the diffs are real diffs. What makes it a classroom rather than just a tool is what surrounds those primitives: generous breathing room, calm and legible type, and small moments of positive feedback (a resolved conflict, a completed lesson) that a production dev tool wouldn't bother with. The system draws confidence from technical precision, not decoration — colors and shapes carry meaning (a commit's graph color is data, not styling), and premium craft comes from restraint and consistency rather than visual noise. This system explicitly rejects the generic AI-SaaS template look: no cream/sand backgrounds, no gradient-text hero headlines, no tiny uppercase eyebrow labels stacked above every section, no hero-metric-stat blocks, no interchangeable icon-card grids. It equally rejects the cold, personality-free enterprise-dashboard look — GitVision is warm at the edges (encouraging copy, celebratory micro-moments) even while its core chrome stays technical and precise.",
+    "keyCharacteristics": [
+      "Near-black canvas with a single bright signal-blue accent, not a multi-hue rainbow",
+      "Monospace type appears anywhere Git output, hashes, or code live; humanist sans everywhere else",
+      "Depth comes from layered surface steps (background → surface → surface-hover), not drop shadows",
+      "The commit graph's per-branch color palette is the one place saturated color is expected and welcome",
+      "Every irreversible-feeling action (reset, rebase, force-push) gets calm, reassuring UI language"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Signal Blue is the only saturated color allowed outside the commit graph and semantic states. If a new UI element wants a second bright color 'for interest,' that instinct is wrong — reach for weight, spacing, or a graph-palette color instead, never a fresh hue.", "section": "colors" },
+      { "name": "The Graph Color Is Data Rule", "body": "Commit-graph colors are assigned by branch/lane index and must stay consistent for a given branch across renders. Never reassign them for decorative variety.", "section": "colors" },
+      { "name": "The Display Ceiling Rule", "body": "Hero type never exceeds 3.75rem (60px) even at its clamp maximum. This is a teaching tool, not a marketing billboard.", "section": "typography" },
+      { "name": "The Mono-Means-Real Rule", "body": "Monospace is reserved for text that is, or represents, actual Git/filesystem output. Never use it decoratively on UI chrome that isn't representing real system data.", "section": "typography" },
+      { "name": "The Flat-Card Rule", "body": "Standard content cards get a border and surface-color shift only — never a resting shadow. A shadow appearing on a card at rest is a bug, not a style choice.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Signal Blue (#38a6ff) as the only non-semantic, non-graph saturated accent in the system.",
+      "Do use the three-step surface ramp (Canvas → Raised Surface → Surface Hover) for all depth/hierarchy, reserving shadows for true overlays (dropdowns, dialogs, toasts).",
+      "Do reserve monospace type strictly for real Git/filesystem output — terminal, diffs, hashes, inline code.",
+      "Do verify muted-gray text (#8b949e) hits 4.5:1 contrast wherever it's used for body copy, not just captions.",
+      "Do treat the commit graph's per-branch color as meaningful data, kept stable across re-renders.",
+      "Do pair every destructive-feeling action (reset, rebase, force-push simulation) with calm, reassuring copy that reminds the learner this is safe to try."
+    ],
+    "donts": [
+      "Don't use background-clip: text gradient headlines — per PRODUCT.md, this reads as generic AI-SaaS template output, and the current homepage's gradient 'GitVision' wordmark should be migrated to a solid Foreground or Signal Blue treatment.",
+      "Don't add tiny uppercase tracked eyebrow labels ('FEATURES', 'HOW IT WORKS') above sections — this is the current AI-tell scaffold and is explicitly banned by PRODUCT.md's anti-references.",
+      "Don't introduce a second bright accent hue for 'visual interest' — every non-graph, non-semantic color decision should route back to Signal Blue, weight, or spacing instead.",
+      "Don't apply resting shadows to standard content cards; a shadow at rest on a flat card is a bug per the Flat-Card Rule.",
+      "Don't let hero/display type exceed the 3.75rem ceiling — this is a teaching tool, not a marketing billboard.",
+      "Don't build a dense, personality-free admin-dashboard surface even for 'power user' screens — GitVision's tone stays Confident, Encouraging, Precise everywhere, not just on the landing page."
+    ]
+  }
+}
