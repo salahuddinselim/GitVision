@@ -8,7 +8,7 @@ GitVision is an interactive Git learning platform. Instead of memorising command
 
 - **Playground:** a simulated terminal with a file explorer, a live **commit graph**, a **staging area** view and a code editor, side by side. Undo and redo any step, and export or import your session.
 - **27 Git commands**, including `init`, `add`, `commit`, `status`, `log`, `diff`, `branch`, `switch`, `checkout`, `merge`, `rebase`, `reset`, `revert`, `cherry-pick`, `stash`, `tag`, `restore`, `clean`, `blame`, `bisect`, `reflog`, `show`, `worktree`, `remote`, `fetch`, `pull` and `push`, plus shell basics (`mkdir`, `cd`, `ls`, `touch`, `echo`, `cat`, `cp`, `mv`, `rm`).
-- **Real Git object IDs:** blobs and commits are hashed with SHA-1 exactly as Git does (`<type> <size>\0<content>`), so IDs behave like the real thing.
+- **Git-style object IDs:** files and regular commits get SHA-1 IDs computed the way Git does (`<type> <size>\0<content>`).
 - **Guided tutorials:** step-by-step lessons on Git basics, branching and merging, working with remotes, and resolving merge conflicts, with the playground checking each step.
 - **Merge conflict trainer:** a dedicated page for creating, understanding and resolving conflicts.
 - **Docs:** a reference page for 35+ Git commands with examples.
@@ -16,7 +16,7 @@ GitVision is an interactive Git learning platform. Instead of memorising command
 - **Linux basics:** the shell commands you need before Git.
 - **Classroom mode:** structured lessons for instructor-led or self-paced courses.
 - **Assistant:** a context-aware helper that suggests the next command based on your repository state (e.g. "you have staged files, commit them").
-- **Light and dark themes**, and state saved in the browser (IndexedDB) so your progress survives a reload.
+- **Light and dark themes**, and state saved in the browser (localStorage) so your progress survives a reload.
 
 ![Playground with commit graph](docs/screenshots/playground.png)
 
@@ -28,7 +28,7 @@ GitVision is an interactive Git learning platform. Instead of memorising command
 | Styling | Tailwind CSS 4, Radix UI primitives, Framer Motion |
 | Terminal & editor | xterm.js, Monaco Editor |
 | Commit graph | React Flow (`@xyflow/react`) |
-| State | Zustand, persisted with localForage / IndexedDB |
+| State | Zustand, persisted to localStorage |
 | Content | MDX |
 | Testing | Vitest (56 tests covering the Git engine and hashing) |
 
@@ -64,7 +64,7 @@ src/
 ├── components/          # Terminal, GitGraph, StagingArea, FileExplorer, DiffViewer,
 │   └── tutorials/       #   ConflictResolver, TutorialPanel, AIAssistant, ...
 ├── store/gitStore.ts    # the simulated Git engine (Zustand store)
-├── lib/                 # SHA-1 object hashing, IndexedDB persistence, helpers
+├── lib/                 # SHA-1 object hashing and helpers
 │   └── __tests__/       # Vitest tests
 └── types/
 ```
